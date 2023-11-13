@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-body">
+      <table class="table table-hover table-responsive-md table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.Name }}</td>
+            <td>{{ user.Email }}</td>
+            <td>
+              <button type="button" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Editar" (click)="navigateToEdit(user.id)">
+                <i class="fas fa-edit"></i>
+              </button>
+              <span style="margin-right: 10px;"></span>
+              <button type="button" class="btn btn-danger btn-sm ml-2" data-toggle="tooltip" data-placement="top" title="Eliminar" (click)="deleteUser(user.id.toString())">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
